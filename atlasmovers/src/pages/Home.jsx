@@ -1,8 +1,7 @@
 import React from "react";
 import "./home.css"; // make sure this file exists next to Home.jsx
 import Features from "./Features";
-import Contact from "./Contact";
-import OurProcess from "./Ourprocess";
+import OurProcess from "./OurProcess";
 import Services from "./Services";
 
 import About from "./About";

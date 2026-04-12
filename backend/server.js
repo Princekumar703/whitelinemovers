@@ -8,13 +8,23 @@ dotenv.config();
 const app = express();
 
 // ✅ CORS
+const allowedOrigins = [
+  "https://whitelinemovers-14a6.vercel.app",
+  "http://localhost:5173"
+];
+
 app.use(cors({
-  origin: [
-    "https://whitelinemovers-14a6.vercel.app",
-    "http://localhost:5173"
-  ],
-  methods: ["GET","POST"],
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true); // allow Postman / curl
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type"],
+  credentials: true
 }));
 
 app.use(express.json());
@@ -22,8 +32,12 @@ app.use(express.json());
 // ✅ Regex
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneRegex = /^[6-9]\d{9}$/;
-app.get("/help", () => {
-  console.log("backend is running");
+app.get("/help", (req, res) => {
+  console.log("HELP HIT");
+  res.status(200).json({
+    success: true,
+    message: "Backend is running"
+  });
 });
 // ✅ Route
 app.post("/send-quote", async (req, res) => {
@@ -68,8 +82,7 @@ app.post("/send-quote", async (req, res) => {
       },
     });
 
-    // 🔥 VERIFY SMTP CONNECTION (fix for no-response issue)
-    await transporter.verify();
+  
 
     // ✅ Mail options
     const mailOptions = {

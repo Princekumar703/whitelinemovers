@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./loader.css";
+import "./Loader.css";
 
 export default function Loader() {
   const [hide, setHide] = useState(false);

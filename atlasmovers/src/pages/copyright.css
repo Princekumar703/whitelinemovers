@@ -1,0 +1,11 @@
+.footer-bottom {
+  text-align: center;
+  background: #090b0e;
+  padding: 14px 0;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

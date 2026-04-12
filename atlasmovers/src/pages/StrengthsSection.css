@@ -1,0 +1,61 @@
+.strengths-section {
+  background: #0b0f19 ;
+  text-align: center;
+  padding: 80px 0;
+  color: white;
+}
+
+.strengths-icon {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.strengths-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.strengths-subtitle {
+  font-size: 16px;
+  opacity: 0.8;
+  margin-bottom: 50px;
+}
+
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 80%;
+  margin: auto;
+  gap: 50px 20px;
+}
+
+.strength-item {
+  text-align: center;
+}
+
+.strength-number {
+  font-size: 38px;
+  color: #f7c217; /* Golden */
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.strength-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.strength-sub {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .strengths-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

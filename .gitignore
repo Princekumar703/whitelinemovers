@@ -1,0 +1,31 @@
+# 🔴 Node modules (frontend + backend)
+node_modules/
+**/node_modules/
+
+# 🔐 Environment files (sensitive)
+.env
+**/.env
+
+# 🏗 Frontend build (Vite)
+atlasmovers/dist/
+dist/
+
+# 🏗 Backend build (future safe)
+backend/dist/
+
+# 🧪 Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🖥 System files
+.DS_Store
+Thumbs.db
+
+# 🧰 Editor folders
+.vscode/
+.idea/
+
+# 📦 Cache
+.cache/

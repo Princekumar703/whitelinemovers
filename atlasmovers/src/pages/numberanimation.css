@@ -1,0 +1,95 @@
+/* ================= CONTAINER ================= */
+.call-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ================= CALL BOX ================= */
+.call-box {
+  background: linear-gradient(135deg, #ffb700, #ffc857);
+  padding: 14px 22px;
+  border-radius: 14px;
+  text-align: center;
+  text-decoration: none;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+  /* smooth entry */
+  animation: fadeUp 0.5s ease;
+
+  /* hover effect */
+  transition: 0.3s ease;
+}
+
+/* 🔥 HOVER */
+.call-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+/* ================= TEXT ================= */
+.call-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  letter-spacing: 0.5px;
+}
+
+/* ================= NUMBER ================= */
+.call-number {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #000;
+  margin-top: 6px;
+
+  display: flex;
+  justify-content: center;
+
+  text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* DIGIT ANIMATION */
+.digit {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: 0.2s ease;
+}
+
+.digit.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= CURSOR ================= */
+.cursor {
+  margin-left: 4px;
+  animation: blink 1s infinite;
+}
+
+/* ================= TAGLINE ================= */
+.call-tagline {
+  font-size: 13px;
+  color: #fff;
+  opacity: 0.85;
+  text-align: center;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

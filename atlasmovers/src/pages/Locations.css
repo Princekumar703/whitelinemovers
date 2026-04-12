@@ -1,0 +1,48 @@
+.locations-page {
+    margin-top:-35px;
+  background: #08101a;
+  color: white;
+  padding: 60px 4%;
+  min-height: 100vh;
+}
+
+.location-heading {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.locations-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.locations-container ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.locations-container li {
+  margin-bottom: 10px;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* Responsive CSS */
+@media (max-width: 900px) {
+  .locations-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .locations-container ul {
+    padding-left: 25px;
+  }
+
+  .locations-container li {
+    font-size: 16px;
+  }
+}
+

@@ -1,0 +1,83 @@
+/* ============================
+   ATLAS MOVERS THEME FOOTER
+   ============================ */
+
+.footer-section {
+  background:   #08101a;   /* Theme dark bg */
+  color: #ffffff;
+  padding: 70px 1%;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 260px;
+}
+
+.footer-col h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffb638;   /* Theme yellow heading */
+}
+
+.footer-col p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Quick links */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  color: #ffb638;
+  font-size: 17px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  opacity: 0.7;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  text-align: center;
+  background: #090b0e;
+  padding: 14px 0;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+  }
+}

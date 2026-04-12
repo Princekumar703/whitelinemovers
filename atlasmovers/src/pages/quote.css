@@ -1,0 +1,162 @@
+/* Background Theme */
+.quote-section {
+  padding: 70px 8%;
+  text-align: center;
+  background: linear-gradient(to bottom, #0b0d10, #0f1720, #0b0d10);
+}
+
+/* Heading */
+.quote-head h2 {
+  color: white;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* Gold line under icon */
+.line {
+  width: 80px;
+  height: 3px;
+  background: #e8c045;
+  margin: 10px auto 0;
+}
+
+/* Truck icon */
+.quote-icon {
+  width: 70px;
+  filter: brightness(1.9);
+}
+
+/* FORM GRID */
+.quote-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* Desktop layout */
+  gap: 18px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+  width: 100%;
+}
+
+/* INPUT FIELDS */
+.quote-form input {
+  padding: 14px;
+  width: 100%;                     /* 🔥 Prevent overflow */
+  border-radius: 8px;
+  border: 1px solid #cccccc;
+  background: white;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  box-sizing: border-box;          /* 🔥 MUST HAVE to stop overflow */
+  transition: 0.3s ease;
+}
+
+/* Gold Focus */
+.quote-form input:focus {
+  border-color: #e8c045;
+  box-shadow: 0 0 8px rgba(232, 192, 69, 0.4);
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+  grid-column: span 2;
+  width: 180px;
+  margin: 20px auto 0;
+  padding: 14px 20px;
+  background: #f78c1f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  background: #e07710;
+  transform: scale(1.03);
+}
+
+/* ============================
+      MOBILE RESPONSIVE FIX
+=============================== */
+@media (max-width: 768px) {
+  .quote-form {
+    grid-template-columns: 1fr;          /* 🔥 1 column in mobile */
+    gap: 14px;
+  }
+
+  .submit-btn {
+    grid-column: span 1;                 /* Center align */
+    width: 100%;
+  }
+
+  .quote-head h2 {
+    font-size: 28px;
+  }
+
+  .quote-icon {
+    width: 55px;
+  }
+}
+
+/* 
+.popup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #00c853;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  animation: fadeIn 0.4s ease;
+  box-shadow: 0px 0px 25px rgba(0,0,0,0.25);
+  z-index: 9999;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+
+
+.popup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  animation: fadePopup .4s ease-out;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.3);
+  z-index: 10000;
+}
+
+.popup.success {
+  background: #00c853;
+}
+
+.popup.error {
+  background: #ff3b3b;
+}
+
+@keyframes fadePopup {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

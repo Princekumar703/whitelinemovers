@@ -1,0 +1,95 @@
+/* ============================================
+   ATLAS MOVERS — SERVICES PAGE THEME
+   (SAFE: ONLY SERVICES PAGE STYLED)
+============================================ */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #0b0d10 !important;  /* Full page dark */
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* Main Section Wrapper */
+#services {
+ width: 100vw !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 12px 8% 80px;
+  background: #0b0d10;
+}
+
+/* Title Section */
+#services .section-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#services .section-head h2 {
+  color: #ffb700;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+#services .section-head .muted {
+  color: #9aa3b2;
+  font-size: 16px;
+}
+
+/* Cards Grid */
+#services .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+/* Service Card */
+#services .card {
+  background: #0f1720;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 8px 26px rgba(2, 6, 23, 0.5);
+  transition: 0.3s;
+}
+
+#services .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(255, 183, 0, 0.15);
+}
+
+/* Card Image */
+#services .card-img {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+#services .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card Title */
+#services .card h3 {
+  color: #ffb700;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+/* Description */
+#services .card p {
+  color: #9aa3b2;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Mobile Fix */
+@media (max-width: 600px) {
+  #services {
+    padding: 6px 5%;
+    padding-top: 110px;
+  }
+}

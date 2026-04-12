@@ -13,7 +13,7 @@ app.use(cors({
     "https://whitelinemovers-14a6.vercel.app",
     "http://localhost:5173"
   ],
-  methods: ["POST"],
+  methods: ["GET","POST"],
   allowedHeaders: ["Content-Type"],
 }));
 
@@ -22,7 +22,9 @@ app.use(express.json());
 // ✅ Regex
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneRegex = /^[6-9]\d{9}$/;
-
+app.get("/help", () => {
+  console.log("backend is running");
+});
 // ✅ Route
 app.post("/send-quote", async (req, res) => {
   const { name, email, phone, movingType, movingFrom, movingTo } = req.body;

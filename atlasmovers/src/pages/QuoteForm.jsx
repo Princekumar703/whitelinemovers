@@ -43,9 +43,10 @@ const [popupType, setPopupType] = useState(""); // success | error
 
     try {
       const response = await axios.post(
-      "https://whitelinemovers-backend.onrender.com/send-quote", data
+      "https://whitelinemovers.onrender.com/send-quote", data
       );
-
+console.log(response);
+console.log(data);
       if (response.status === 200 || response.status === 201) {
 
         setPopupMsg("Quote Sent Successfully 🎉");

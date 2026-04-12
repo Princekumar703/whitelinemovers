@@ -7,13 +7,13 @@ dotenv.config();
 
 const app = express();
 
-// ✅ CORS (production + local)
+// ✅ CORS
 app.use(cors({
   origin: [
     "https://whitelinemovers-14a6.vercel.app",
     "http://localhost:5173"
   ],
-  methods: ["GET", "POST"],
+  methods: ["POST"],
   allowedHeaders: ["Content-Type"],
 }));
 
@@ -52,6 +52,11 @@ app.post("/send-quote", async (req, res) => {
   }
 
   try {
+    // ❗ ENV check (important)
+    if (!process.env.GMAIL || !process.env.PASS) {
+      throw new Error("Missing EMAIL credentials in environment variables");
+    }
+
     // ✅ Transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -60,6 +65,9 @@ app.post("/send-quote", async (req, res) => {
         pass: process.env.PASS,
       },
     });
+
+    // 🔥 VERIFY SMTP CONNECTION (fix for no-response issue)
+    await transporter.verify();
 
     // ✅ Mail options
     const mailOptions = {
@@ -79,7 +87,9 @@ app.post("/send-quote", async (req, res) => {
     };
 
     // ✅ Send mail
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+
+    console.log("MAIL SENT:", info.response);
 
     return res.json({
       success: true,
@@ -87,16 +97,16 @@ app.post("/send-quote", async (req, res) => {
     });
 
   } catch (error) {
-    console.log("MAIL ERROR:", error); // 🔥 important log
+    console.log("MAIL ERROR FULL:", error); // full error
 
     return res.status(500).json({
       success: false,
-      message: error.message || "Failed to send email",
+      message: error.message || "Mail failed",
     });
   }
 });
 
-// ✅ Server start (Render compatible)
+// ✅ Server start
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
